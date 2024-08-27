@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Rating from "./Rating";
 
-const ProductCard = ({ title, price, image }) => {
+const ProductCard = ({ title, price, image, addToCart }) => {
   const [rating, setRating] = useState(0);
 
   const handleRating = (rate) => {
@@ -16,7 +16,10 @@ const ProductCard = ({ title, price, image }) => {
           alt="Product"
           className="w-full h-48 object-cover rounded-lg group-hover:opacity-50 transition-opacity duration-300"
         />
-        <button className="absolute inset-0 m-auto flex items-center justify-center w-32 h-10 text-white bg-blue-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <button
+          onClick={addToCart}
+          className="absolute inset-0 m-auto flex items-center justify-center w-32 h-10 text-white bg-blue-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
           Add to Cart
         </button>
       </div>
