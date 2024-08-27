@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Rating from "./Rating";
 
 const ProductCard = ({ title, price, image }) => {
   const [rating, setRating] = useState(0);
@@ -23,6 +24,7 @@ const ProductCard = ({ title, price, image }) => {
         <h2 className="mt-4 text-xl font-semibold">{title}</h2>
         <p className="mt-2 text-gray-500">{price}</p>
       </div>
+      <Rating rating={rating} handleRating={handleRating} />
     </div>
   );
 };
