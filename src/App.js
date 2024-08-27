@@ -1,15 +1,18 @@
 import React from "react";
 import ProductCard from "./components/ProductCard";
-import productImage from "../src/assets/shirt-1.jpg";
+import images from "./utils/importImages";
 
 function App() {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <ProductCard
-        title="Ultrafine Merino T-Shirt"
-        price="80.00"
-        image={productImage}
-      />
+      {Object.keys(images).map((key, index) => (
+        <ProductCard
+          key={index}
+          title={`Product ${index + 1}`}
+          price={(80 + index * 10).toFixed(2)}
+          image={images[key]}
+        />
+      ))}
     </div>
   );
 }
