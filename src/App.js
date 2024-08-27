@@ -4,7 +4,11 @@ import images from "./utils/importImages";
 
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div
+      className={`grid gap-4 p-4 justify-center items-center h-screen bg-gray-100 
+              grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 
+              place-items-center`}
+    >
       {Object.keys(images).map((key, index) => (
         <ProductCard
           key={index}
